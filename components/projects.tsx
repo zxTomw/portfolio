@@ -1,14 +1,8 @@
 import Image from "next/image";
-import { MagicCard } from "./ui/magic-card";
 import { BlurFade } from "./ui/blur-fade";
-import { group } from "console";
-import { Users } from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { ThemedMagicCard } from "./themed-magic-card";
-import { image } from "motion/react-client";
-import { title } from "process";
 
 const projectList = [
   {

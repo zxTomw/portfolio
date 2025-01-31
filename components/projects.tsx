@@ -53,6 +53,7 @@ const projectList = [
       "LangChain",
       "Vercel",
       "Tailwind CSS",
+      "Bun",
     ],
   },
   {

@@ -72,8 +72,8 @@ const projectList = [
 
 export function Projects() {
   return (
-    <div className="px-12 py-12 sm:px-14 flex flex-col gap-8 pt-23">
-      <h2 className="font-semibold text-3xl">Projects</h2>
+    <div className="px-12 py-10 sm:px-12 flex flex-col gap-8 pt-23" id="proj">
+      <h2 className="font-semibold text-3xl pt-5">Projects</h2>
       <div className="flex gap-12 flex-row flex-wrap justify-between h-fit">
         {projectList.map((project, index) => (
           <BlurFade key={project.title} delay={0.25 + index * 0.05} inView>

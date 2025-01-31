@@ -8,7 +8,7 @@ export function Navbar() {
   return (
     <nav
       className="flex justify-between items-center top-0
-           py-4 sticky z-10 px-10 backdrop-blur-md w-full"
+           py-4 fixed z-10 px-10 backdrop-blur-md w-full"
     >
       <div className="flex gap-10 items-center">
         <Link href="/">

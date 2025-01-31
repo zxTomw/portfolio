@@ -1,6 +1,8 @@
-# portfolio
+# Portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is my portfolio containing my personal interests and experience. View demo [here](https://tomw.vercel.app)
+
+<img width="1302" alt="image" src="https://github.com/user-attachments/assets/dd2fb995-4c74-46e6-be4a-d4e0d2299a5a" />
 
 ## Getting Started
 

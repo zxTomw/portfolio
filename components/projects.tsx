@@ -74,7 +74,7 @@ export function Projects() {
       <h2 className="font-semibold text-3xl">Projects</h2>
       <div className="flex gap-12 flex-row flex-wrap justify-between h-fit">
         {projectList.map((project, index) => (
-          <BlurFade key={project.title} delay={0.25 + index * 0.1} inView>
+          <BlurFade key={project.title} delay={0.25 + index * 0.05} inView>
             <ThemedMagicCard>
               <div className="h-full w-full flex flex-col p-[0.07rem]">
                 <div className="relative w-full h-52 -z-50 rounded-t-[0.7rem] overflow-hidden">

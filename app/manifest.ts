@@ -7,8 +7,6 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "projects, experiences, and hobbies",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#000000",
     screenshots: [
       {
         src: "/screenshot-wide.png",

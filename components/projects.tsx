@@ -72,17 +72,14 @@ const projectList = [
 
 export function Projects() {
   return (
-    <div
-      className="px-12 py-12 sm:px-14 flex flex-col gap-8 pt-23 -z-10"
-      id="proj"
-    >
+    <div className="px-12 py-12 sm:px-14 flex flex-col gap-8 pt-23 " id="proj">
       <h2 className="font-semibold text-3xl pt-5">Projects</h2>
       <div className="flex gap-12 flex-row flex-wrap justify-between h-fit">
         {projectList.map((project, index) => (
           <BlurFade key={project.title} delay={0.25 + index * 0.05} inView>
             <ThemedMagicCard>
               <div className="h-full w-full flex flex-col p-[0.07rem]">
-                <div className="relative w-full h-52 -z-50 rounded-t-[0.7rem] overflow-hidden">
+                <div className="relative w-full h-52 rounded-t-[0.7rem] overflow-hidden">
                   {project.image ? (
                     <Image
                       src={project.image}

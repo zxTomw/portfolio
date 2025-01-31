@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 export function Intro() {
   return (
     <div className="flex gap-14 items-center flex-wrap w-full py-12 px-12 sm:px-14 min-h-screen">
-      <div>
+      <div className="pb-12">
         <div className="flex justify-between gap-10 items-center flex-wrap">
           <InteractiveHeading />
         </div>

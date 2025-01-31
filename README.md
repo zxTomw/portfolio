@@ -1,6 +1,7 @@
 # portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is my portfolio containing my personal interests and experience.
+<img width="1302" alt="image" src="https://github.com/user-attachments/assets/bbd56f79-aa54-41fb-ad37-f4db81c11c3f" />
 
 ## Getting Started
 

@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Tom's Portfolio",
-  description: "projects, experiences, etc.",
+  description: "projects, experiences, and hobbies",
 };
 
 export default function RootLayout({
@@ -22,12 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <main className="flex w-dvw min-h-screen">{children}</main>
         </ThemeProvider>
         <Analytics />

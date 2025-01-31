@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { TextAnimate } from "./text-animate";
-import { span } from "motion/react-client";
+import BlurInSpan from "./blur-in-span";
 
 export function InteractiveHeading() {
   const [name, setName] = useState("Tom");
@@ -38,13 +37,7 @@ export function InteractiveHeading() {
           })
         }
       >
-        <TextAnimate
-          animation="blurIn"
-          as={span}
-          className="[&:hover+span]:visible"
-        >
-          {name}
-        </TextAnimate>
+        <BlurInSpan>{name}</BlurInSpan>
       </span>
     </h1>
   );

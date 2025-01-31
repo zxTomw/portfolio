@@ -32,6 +32,7 @@ const projectList = [
       "OpenCV",
       "PyTorch",
       "WebSocket",
+      "Flask",
     ],
   },
   {
@@ -60,7 +61,7 @@ const projectList = [
     id: "cli-chess",
     title: "CLI Chess",
     description:
-      "A command line chess game with hard-level AIs and multiplayer.\
+      "A command line chess game with hard-level AI's and multiplayer modes.\
      Built with C++, and utilized Minimax algorithm with alpha-beta pruning.",
     group: "group",
     image: "/projects/chess.png",

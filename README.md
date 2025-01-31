@@ -1,7 +1,8 @@
-# portfolio
+# Portfolio
 
 This is my portfolio containing my personal interests and experience.
-<img width="1302" alt="image" src="https://github.com/user-attachments/assets/bbd56f79-aa54-41fb-ad37-f4db81c11c3f" />
+
+<img width="1302" alt="image" src="https://github.com/user-attachments/assets/dd2fb995-4c74-46e6-be4a-d4e0d2299a5a" />
 
 ## Getting Started
 

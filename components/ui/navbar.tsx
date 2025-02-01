@@ -22,7 +22,7 @@ export function Navbar() {
         <Link href="https://github.com/zxTomw" target="_blank">
           <FontAwesomeIcon
             icon={faGithub}
-            className="h-5 hover:text-foreground"
+            className="h-[1.4rem] hover:text-foreground"
           />
         </Link>
         <Link href="https://linkedin.com/in/zxTomw" target="_blank">

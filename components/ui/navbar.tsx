@@ -3,8 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ComponentNoneIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
+import { MailIcon } from "lucide-react";
+import { portfolioConfig } from "@/portfolio";
 
 export function Navbar() {
+  const { email, linkedin, github } = portfolioConfig;
   return (
     <nav
       className="flex justify-between items-center top-0
@@ -19,13 +22,16 @@ export function Navbar() {
         </a>
       </div>
       <div className="flex gap-5 items-center text-muted-foreground">
-        <Link href="https://github.com/zxTomw" target="_blank">
+        <Link href={`mailto:${email}`}>
+          <MailIcon className="h-6 w-6 hover:text-foreground" />
+        </Link>
+        <Link href={github} target="_blank">
           <FontAwesomeIcon
             icon={faGithub}
             className="h-[1.4rem] hover:text-foreground"
           />
         </Link>
-        <Link href="https://linkedin.com/in/zxTomw" target="_blank">
+        <Link href={linkedin} target="_blank">
           <FontAwesomeIcon
             icon={faLinkedinIn}
             className="h-6 hover:text-foreground"

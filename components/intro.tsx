@@ -1,10 +1,7 @@
 import { InteractiveUW } from "./ui/interactive-uw";
 import { InteractiveHeading } from "./ui/interactive-heading";
-import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Separator } from "@/components/ui/separator";
 import { portfolioConfig } from "@/portfolio";
-import { Button } from "./ui/button";
 import { BlurFade } from "./ui/blur-fade";
 
 export function Intro() {

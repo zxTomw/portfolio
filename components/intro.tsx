@@ -5,7 +5,7 @@ import { portfolioConfig } from "@/portfolio";
 import { BlurFade } from "./ui/blur-fade";
 
 export function Intro() {
-  const { email, linkedin, github } = portfolioConfig;
+  const { email } = portfolioConfig;
   return (
     <div className="flex gap-14 items-center flex-wrap w-full py-12 px-12 sm:px-14 min-h-screen">
       <div className="">

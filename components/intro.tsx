@@ -21,7 +21,7 @@ export function Intro() {
           <br />I am passionate about software engineering, machine learning,
           and robotics.
         </p>
-        <BlurFade delay={0.7} inView>
+        <BlurFade delay={0.5} inView>
           <div className="flex gap-3 items-center text- pt-2">
             <a href={`mailto:${email}`} className="hover:underline">
               Contact

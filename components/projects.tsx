@@ -3,79 +3,15 @@ import { BlurFade } from "./ui/blur-fade";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { ThemedMagicCard } from "./themed-magic-card";
-
-const projectList = [
-  {
-    id: "path-robot",
-    image: "/projects/path-robot.png",
-    title: "Pathfinding Robot",
-    group: "group",
-    github: "https://github.com/kenoi1/wato-asd",
-    description:
-      "A simulated robot equipped with lidar that evaluates the objects around it and finds the shortest path to the destination.",
-    techStack: ["C++", "ROS", "CMake", "Docker", "Foxglove Studio"],
-  },
-  {
-    id: "navgoose",
-    image: "/projects/navgoose.jpg",
-    title: "NavGoose",
-    description:
-      "A hardware project that uses a Raspberry Pi connected to a camera to\
-    detect objects on the ground for visual impared individuals. Used\
-     custom-trained YOLOV11 model for object detection.",
-    github: "https://github.com/kenoi1/geesehack",
-    group: "group",
-    techStack: [
-      "Python",
-      "YOLOV11",
-      "Raspberry Pi",
-      "OpenCV",
-      "PyTorch",
-      "WebSocket",
-      "Flask",
-    ],
-  },
-  {
-    id: "personal-notes",
-    title: "PersonalNotes",
-    description:
-      "An LLM-powered note-taking app that aggregates your notes and\
-    documents. Utilized OpenAI platform and LangChain to generate summaries, \
-    flash cards and test questions.",
-    group: "group",
-    image: "/projects/personal-notes.png",
-    github: "https://github.com/zxTomw/HTN2024",
-    techStack: [
-      "React",
-      "Next.js",
-      "Flask",
-      "PostgreSQL",
-      "OpenAI",
-      "LangChain",
-      "Vercel",
-      "Tailwind CSS",
-      "Bun",
-    ],
-  },
-  {
-    id: "cli-chess",
-    title: "CLI Chess",
-    description:
-      "A command line chess game with hard-level AI's and multiplayer modes.\
-     Built with C++, and utilized Minimax algorithm with alpha-beta pruning.",
-    group: "group",
-    image: "/projects/chess.png",
-    github: "https://github.com/RC074/CS246-Chess",
-    techStack: ["C++", "CMake", "GNU", "Clang"],
-  },
-];
+import { projectList } from "@/portfolio";
 
 export function Projects() {
+  const fetchedProjectList = projectList;
   return (
     <div className="px-12 py-12 sm:px-14 flex flex-col gap-8 pt-23 " id="proj">
       <h2 className="font-semibold text-3xl pt-5">Projects</h2>
       <div className="flex gap-12 flex-row flex-wrap justify-between h-fit">
-        {projectList.map((project, index) => (
+        {fetchedProjectList.map((project, index) => (
           <BlurFade key={project.title} delay={index * 0.05} inView>
             <ThemedMagicCard>
               <div className="h-full w-full flex flex-col p-[0.07rem]">

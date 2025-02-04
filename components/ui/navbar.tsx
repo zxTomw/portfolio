@@ -4,10 +4,10 @@ import { ComponentNoneIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import { MailIcon } from "lucide-react";
-import { portfolioConfig } from "@/portfolio";
+import { socialLinks } from "@/portfolio";
 
 export function Navbar() {
-  const { email, linkedin, github } = portfolioConfig;
+  const { email, linkedin, github } = socialLinks;
   return (
     <nav
       className="flex justify-between items-center top-0

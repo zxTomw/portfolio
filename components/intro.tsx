@@ -1,11 +1,11 @@
 import { InteractiveUW } from "./ui/interactive-uw";
 import { InteractiveHeading } from "./ui/interactive-heading";
 import { Separator } from "@/components/ui/separator";
-import { portfolioConfig } from "@/portfolio";
+import { socialLinks } from "@/portfolio";
 import { BlurFade } from "./ui/blur-fade";
 
 export function Intro() {
-  const { email } = portfolioConfig;
+  const { email } = socialLinks;
   return (
     <div className="flex gap-14 items-center flex-wrap w-full py-12 px-12 sm:px-14 min-h-screen">
       <div className="">

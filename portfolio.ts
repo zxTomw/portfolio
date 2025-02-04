@@ -1,4 +1,4 @@
-export const portfolioConfig = {
+export const socialLinks = {
   email: "tom.wang3@uwaterloo.ca",
   linkedin: "https://linkedin.com/in/zxTomw",
   github: "https://github.com/zxTomw",

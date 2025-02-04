@@ -29,13 +29,13 @@ export function Footer() {
       </p>
       <p className="text-sm md:text-base md:font-semibold">by Tom Wang</p>
       <div className="flex gap-3 py-1 items-center md:hidden">
-        <Link href="https://github.com/zxTomw" target="_blank">
+        <Link href={github} target="_blank">
           <FontAwesomeIcon
             icon={faGithub}
             className="h-[1.1rem] hover:text-foreground"
           />
         </Link>
-        <Link href="https://linkedin.com/in/zxTomw" target="_blank">
+        <Link href={linkedin} target="_blank">
           <FontAwesomeIcon
             icon={faLinkedinIn}
             className="h-5 hover:text-foreground"

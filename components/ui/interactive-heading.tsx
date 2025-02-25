@@ -24,6 +24,7 @@ export function InteractiveHeading() {
         {iam}
       </span>
       <span
+        className="cursor-pointer"
         onClick={() =>
           setName((prev) => {
             switch (prev) {

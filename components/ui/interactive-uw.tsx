@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import { AuroraText } from "./aurora-text";
-import { span } from "motion/react-client";
 
 export function InteractiveUW() {
   const [waterloo, setWaterloo] = useState("the University of Waterloo");
@@ -20,9 +18,9 @@ export function InteractiveUW() {
         })
       }
     >
-      <AuroraText as={span} className="font-semibold">
+      <span className="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 font-semibold">
         {waterloo}.
-      </AuroraText>
+      </span>
     </span>
   );
 }

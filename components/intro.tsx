@@ -1,11 +1,15 @@
 import { InteractiveUW } from "./ui/interactive-uw";
 import { InteractiveHeading } from "./ui/interactive-heading";
 import { Separator } from "@/components/ui/separator";
-import { socialLinks } from "@/portfolio";
 import { BlurFade } from "./ui/blur-fade";
+import type { SiteLinks } from "@/lib/cms";
 
-export function Intro() {
-  const { email } = socialLinks;
+type IntroProps = {
+  links: SiteLinks;
+};
+
+export function Intro({ links }: IntroProps) {
+  const { email, resumeUrl } = links;
   return (
     <div className="flex gap-14 items-center flex-wrap w-full py-12 px-12 sm:px-14 min-h-screen">
       <div className="">
@@ -24,7 +28,7 @@ export function Intro() {
               Contact
             </a>
             <Separator orientation="vertical" className="h-6" />
-            <a className="hover:underline" href="/resume.pdf" target="_blank">
+            <a className="hover:underline" href={resumeUrl} target="_blank">
               Resumé
             </a>
           </div>

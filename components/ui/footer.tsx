@@ -1,10 +1,14 @@
-import { socialLinks } from "@/portfolio";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import type { SiteLinks } from "@/lib/cms";
 
-export function Footer() {
-  const { linkedin, github } = socialLinks;
+type FooterProps = {
+  links: SiteLinks;
+};
+
+export function Footer({ links }: FooterProps) {
+  const { linkedin, github } = links;
   return (
     <footer
       className="px-16 container mx-auto md:py-20 py-12 flex flex-col md:flex-row

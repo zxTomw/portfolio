@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
+import { getSiteSettings } from "@/lib/cms";
+import "../globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const geistSans = localFont({
+  src: "../fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -17,23 +19,25 @@ export const metadata: Metadata = {
   description: "projects, experiences, and hobbies",
 };
 
-export default function RootLayout({
+export default async function SiteLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteSettings = await getSiteSettings();
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased `}>
+      <body className={`${geistSans.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Navbar />
+          <Navbar links={siteSettings} />
           <div className="min-h-screen">
             {children}
-            <Footer />
+            <Footer links={siteSettings} />
           </div>
+          <SpeedInsights />
+          <Analytics />
         </ThemeProvider>
-        <SpeedInsights />
-        <Analytics />
       </body>
     </html>
   );

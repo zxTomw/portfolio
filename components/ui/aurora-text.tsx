@@ -3,11 +3,26 @@ import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "motion/react";
 import React from "react";
 
+const motionComponents = {
+  span: motion.span,
+  p: motion.p,
+  div: motion.div,
+  h1: motion.h1,
+  h2: motion.h2,
+  h3: motion.h3,
+  h4: motion.h4,
+  h5: motion.h5,
+  h6: motion.h6,
+  a: motion.a,
+} as const;
+
+type AuroraElement = keyof typeof motionComponents;
+
 interface AuroraTextProps
   extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps> {
   className?: string;
   children: React.ReactNode;
-  as?: React.ElementType;
+  as?: AuroraElement;
 }
 
 export function AuroraText({
@@ -16,7 +31,7 @@ export function AuroraText({
   as: Component = "span",
   ...props
 }: AuroraTextProps) {
-  const MotionComponent = motion.create(Component);
+  const MotionComponent = motionComponents[Component];
 
   return (
     <MotionComponent

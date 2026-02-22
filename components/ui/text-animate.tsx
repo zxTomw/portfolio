@@ -2,7 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, MotionProps, Variants } from "motion/react";
-import { ElementType } from "react";
 
 type AnimationType = "text" | "word" | "character" | "line";
 type AnimationVariant =
@@ -16,6 +15,20 @@ type AnimationVariant =
   | "slideRight"
   | "scaleUp"
   | "scaleDown";
+
+const motionComponents = {
+  p: motion.p,
+  div: motion.div,
+  span: motion.span,
+  h1: motion.h1,
+  h2: motion.h2,
+  h3: motion.h3,
+  h4: motion.h4,
+  h5: motion.h5,
+  h6: motion.h6,
+} as const;
+
+type TextAnimateElement = keyof typeof motionComponents;
 
 interface TextAnimateProps extends MotionProps {
   /**
@@ -45,7 +58,7 @@ interface TextAnimateProps extends MotionProps {
   /**
    * The element type to render
    */
-  as?: ElementType;
+  as?: TextAnimateElement;
   /**
    * How to split the text ("text", "word", "character")
    */
@@ -144,7 +157,7 @@ const defaultItemAnimationVariants: Record<
     container: defaultContainerVariants,
     item: {
       hidden: { opacity: 0, filter: "blur(10px)", y: 20 },
-      show: (delay: number) => ({
+      show: () => ({
         opacity: 1,
         filter: "blur(0px)",
         y: 0,
@@ -170,7 +183,7 @@ const defaultItemAnimationVariants: Record<
     container: defaultContainerVariants,
     item: {
       hidden: { opacity: 0, filter: "blur(10px)", y: -20 },
-      show: (delay: number) => ({
+      show: () => ({
         opacity: 1,
         filter: "blur(0px)",
         y: 0,
@@ -314,7 +327,7 @@ export function TextAnimate({
   animation = "fadeIn",
   ...props
 }: TextAnimateProps) {
-  const MotionComponent = motion.create(Component);
+  const MotionComponent = motionComponents[Component];
 
   // Use provided variants or default variants based on animation type
   const finalVariants = animation
@@ -335,9 +348,9 @@ export function TextAnimate({
             },
           },
         },
-        item: defaultItemAnimationVariants[animation].item,
+        item: variants ?? defaultItemAnimationVariants[animation].item,
       }
-    : { container: defaultContainerVariants, item: defaultItemVariants };
+    : { container: defaultContainerVariants, item: variants ?? defaultItemVariants };
 
   let segments: string[] = [];
   switch (by) {
@@ -364,6 +377,8 @@ export function TextAnimate({
         whileInView={startOnView ? "show" : undefined}
         animate={startOnView ? undefined : "show"}
         exit="exit"
+        viewport={startOnView ? { once } : undefined}
+        transition={{ duration }}
         className={cn("whitespace-pre-wrap", className)}
         {...props}
       >
@@ -371,7 +386,7 @@ export function TextAnimate({
           <motion.span
             key={`${by}-${segment}-${i}`}
             variants={finalVariants.item}
-            custom={i * staggerTimings[by]}
+            custom={delay + i * staggerTimings[by]}
             className={cn(
               by === "line" ? "block" : "inline-block whitespace-pre",
               segmentClassName,

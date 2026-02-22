@@ -1,3 +1,13 @@
+type DefaultProject = {
+  slug: string;
+  image?: string;
+  title: string;
+  description: string;
+  github?: string;
+  gitlab?: string;
+  techStack: string[];
+};
+
 export const defaultSiteLinks = {
   email: "tom.wang3@uwaterloo.ca",
   linkedin: "https://linkedin.com/in/zxTomw",
@@ -5,7 +15,7 @@ export const defaultSiteLinks = {
   resumeUrl: "/resume.pdf",
 };
 
-export const defaultProjects = [
+export const defaultProjects: DefaultProject[] = [
   {
     slug: "path-robot",
     image: "/projects/path-robot.png",

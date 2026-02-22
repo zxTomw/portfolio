@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { BlurFade } from "./ui/blur-fade";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { faGitlab } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { ThemedMagicCard } from "./themed-magic-card";
 import type { ProjectCard } from "@/lib/cms";
@@ -24,6 +26,7 @@ export function Projects({ projects }: ProjectsProps) {
                       src={project.image}
                       alt={`${project.title} cover image`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 18rem, (max-width: 1280px) 24rem, 20rem"
                       className="object-cover "
                     />
                   ) : (
@@ -32,6 +35,7 @@ export function Projects({ projects }: ProjectsProps) {
                       alt={`${project.title} cover image`}
                       className="object-contain p-10"
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 18rem, (max-width: 1280px) 24rem, 20rem"
                     />
                   )}
                 </div>
@@ -41,8 +45,21 @@ export function Projects({ projects }: ProjectsProps) {
                       <h3 className="font-semibold text-xl">{project.title}</h3>
                       {/* <Users size={15} /> */}
                       {project.github && (
-                        <Link href={project.github} target="_blank">
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          aria-label={`${project.title} GitHub repository`}
+                        >
                           <GitHubLogoIcon className="h-5 w-5" />
+                        </Link>
+                      )}
+                      {project.gitlab && (
+                        <Link
+                          href={project.gitlab}
+                          target="_blank"
+                          aria-label={`${project.title} GitLab repository`}
+                        >
+                          <FontAwesomeIcon icon={faGitlab} className="h-5 w-5" />
                         </Link>
                       )}
                     </div>

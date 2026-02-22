@@ -84,6 +84,7 @@ async function seed() {
       slug: project.slug,
       description: project.description,
       github: project.github,
+      gitlab: project.gitlab,
       techStack: project.techStack.map((name) => ({ name })),
       sortOrder: index,
       image: media?.id ?? null,
@@ -107,12 +108,10 @@ async function seed() {
     });
   }
 
-  // eslint-disable-next-line no-console
   console.log("Payload seed complete.");
 }
 
 seed().catch((error) => {
-  // eslint-disable-next-line no-console
   console.error(error);
   process.exit(1);
 });

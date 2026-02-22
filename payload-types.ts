@@ -174,6 +174,7 @@ export interface Project {
   slug: string;
   description: string;
   github?: string | null;
+  gitlab?: string | null;
   image?: (number | null) | Media;
   techStack: {
     name: string;
@@ -311,6 +312,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   slug?: T;
   description?: T;
   github?: T;
+  gitlab?: T;
   image?: T;
   techStack?:
     | T

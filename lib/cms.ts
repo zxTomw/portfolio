@@ -9,6 +9,7 @@ export type ProjectCard = {
   title: string;
   description: string;
   github?: string | null;
+  gitlab?: string | null;
   techStack: string[];
   image?: string | null;
 };
@@ -56,6 +57,7 @@ export const getProjects = cache(async (): Promise<ProjectCard[]> => {
       title: project.title,
       description: project.description,
       github: project.github ?? null,
+      gitlab: project.gitlab ?? null,
       techStack: project.techStack,
       image: project.image ?? null,
     }));
@@ -77,6 +79,7 @@ export const getProjects = cache(async (): Promise<ProjectCard[]> => {
       title: project.title,
       description: project.description,
       github: project.github ?? null,
+      gitlab: project.gitlab ?? null,
       techStack: project.techStack,
       image: project.image ?? null,
     }));
@@ -97,6 +100,7 @@ export const getProjects = cache(async (): Promise<ProjectCard[]> => {
       title: doc.title,
       description: doc.description,
       github: doc.github,
+      gitlab: doc.gitlab,
       techStack,
       image,
     };

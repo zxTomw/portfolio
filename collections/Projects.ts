@@ -55,6 +55,10 @@ export const Projects: CollectionConfig = {
       type: "text",
     },
     {
+      name: "gitlab",
+      type: "text",
+    },
+    {
       name: "image",
       type: "relationship",
       relationTo: "media",
